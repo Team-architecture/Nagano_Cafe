@@ -29,7 +29,7 @@ namespace :admin do
   resources :genres, only: [:index, :create, :edit, :update]
   resources :customers, only: [:index, :show, :edit, :update]
   resources :orders, only: [:show, :update]
-  resources :order_details, only: [update]
+  resources :order_details, only: [:update]
 end
 # ↑2023/08/21記入
 
@@ -38,7 +38,6 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
   sessions: "admin/sessions"
 }
 
-  root to: 'homes#top'
   get 'homes/about'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
