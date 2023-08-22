@@ -6,6 +6,7 @@ scope module: :public do
   root to: "homes#top"
   resources :items, only: [:index, :show]
   get "/customers/confirm_withdraw" => "customers#confirm_withdraw"
+  get "/customers/mypage" => "customers#show"
   patch "/customers/withdraw" => "customers#withdraw"
   resources :cart_items, only: [:index, :create, :update, :destroy]
   delete "/cart_items/destroy_all" => "cart_items#destroy_all"
