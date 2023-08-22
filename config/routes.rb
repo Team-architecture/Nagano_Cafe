@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 scope module: :public do
   root to: "homes#top"
   resources :items, only: [:index, :show]
-  resources :customers, only: [:show, :edit, :update]
   get "/customers/confirm_withdraw" => "customers#confirm_withdraw"
   patch "/customers/withdraw" => "customers#withdraw"
   resources :cart_items, only: [:index, :create, :update, :destroy]
@@ -29,7 +28,7 @@ namespace :admin do
   resources :genres, only: [:index, :create, :edit, :update]
   resources :customers, only: [:index, :show, :edit, :update]
   resources :orders, only: [:show, :update]
-  resources :order_details, only: [update]
+  resources :order_details, only: [:update]
 end
 # ↑2023/08/21記入
 
@@ -38,7 +37,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
   sessions: "admin/sessions"
 }
 
-  root to: 'homes#top'
+
   get 'homes/about'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
