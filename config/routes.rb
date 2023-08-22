@@ -14,6 +14,7 @@ scope module: :public do
   get "orders/complete" => "orders#complete"
   resources :destinations, only: [:index, :edit, :create, :update, :destroy]
   get 'homes/about'
+
 end
 # ↑2023/08/21記入
  devise_for :customers,skip: [:passwords], controllers: {
