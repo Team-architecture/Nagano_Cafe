@@ -1,0 +1,14 @@
+admin/items#new
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h2>商品新規登録</h2>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-8">
+      <%= form_with model: @item, url admin_items_path, local: true do |f| %>
+    </div>
+  </div>
