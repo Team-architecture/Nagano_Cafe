@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 scope module: :public do
   root to: "homes#top"
   resources :items, only: [:index, :show]
-  resources :customers, only: [:show, :edit, :update]
   get "/customers/confirm_withdraw" => "customers#confirm_withdraw"
   patch "/customers/withdraw" => "customers#withdraw"
   resources :cart_items, only: [:index, :create, :update, :destroy]
@@ -37,6 +36,7 @@ end
 devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
   sessions: "admin/sessions"
 }
+
 
   get 'homes/about'
 
