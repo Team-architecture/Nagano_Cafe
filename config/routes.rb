@@ -7,6 +7,9 @@ scope module: :public do
   resources :items, only: [:index, :show]
   get "/customers/confirm_withdraw" => "customers#confirm_withdraw"
   get "/customers/mypage" => "customers#show"
+  get "/customers/information/edit" => "customers#edit"
+  get  "/customers/confirm_withdraw" => "customers#confirm_withdraw"
+  patch "customers/information" => "customers#update"
   patch "/customers/withdraw" => "customers#withdraw"
   resources :cart_items, only: [:index, :create, :update, :destroy]
   delete "/cart_items/destroy_all" => "cart_items#destroy_all"
