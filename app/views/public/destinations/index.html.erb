@@ -1,1 +1,41 @@
-<h1>hoge</h1>
+<h1>配送先登録/一覧</h1>
+<%= form_with model: @destination do |form| %>
+  <div>
+    <%= form.label :postal_code, "郵便番号(ハイフンなし）" %>
+    <%= form.text_field :postal_code %>
+  </div>
+  <div>
+    <%= form.label :address, "住所" %>
+    <%= form.text_field :address %>
+  </div>
+  <div>
+    <%= form.label :name, "宛名" %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.submit "新規登録" %>
+  </div>
+<% end %>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>郵便番号</th>
+      <th>住所</th>
+      <th>宛名</th>
+      <th></th>
+    </tr>
+  </thead>
+  <% @destinations.each do |destination| %>
+  <tr>
+    <td><%= destination.postal_code %></td>
+    <td><%= destination.address %></td>
+    <td><%= destination.name %></td>
+    <td>
+      <%= link_to "編集する", "#" %>
+      <%= link_to "削除する", "#" %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
