@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 2023_08_21_085619) do
     t.integer "genre_id"
     t.string "name"
     t.text "explanation"
+    t.string "image_id"
     t.integer "unit_price"
     t.boolean "is_selling_status"
     t.datetime "created_at", precision: 6, null: false
