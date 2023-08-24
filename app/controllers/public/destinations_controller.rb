@@ -2,12 +2,17 @@ class Public::DestinationsController < ApplicationController
   def index
     @destination = Destination.new
     @destinations = Destination.all
+    @customer = Customer.find(params[:id])
   end
 
   def create
     @destination = Destination.new(destination_params)
     @destination.save
     redirect_to destinations_path
+  end
+
+  def edit
+    @destination = Destination.find(paramas[:id])
   end
 
 
