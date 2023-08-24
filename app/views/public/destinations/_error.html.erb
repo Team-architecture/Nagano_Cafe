@@ -1,0 +1,6 @@
+<% if destination.errors.any? %>
+      <%= destination.errors.count %>prohibited this obj from being saved:
+        <% destination.errors.full_messages.each do |error| %>
+      <%= error %>
+      <% end %>
+<% end %>
