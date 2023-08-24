@@ -1,4 +1,5 @@
 <h1>配送先登録/一覧</h1>
+<%= render 'public/destinations/error', destination: @destination %>
 <%= form_with model: @destination do |form| %>
   <div>
     <%= form.label :postal_code, "郵便番号(ハイフンなし）" %>
@@ -32,8 +33,8 @@
     <td><%= destination.address %></td>
     <td><%= destination.name %></td>
     <td>
-      <%= link_to "編集する", "#" %>
-      <%= link_to "削除する", "#" %>
+      <%= link_to "編集する", edit_destination_path(destination.id), class:"btn btn-success" %>
+      <%= link_to "削除する", destination_path(destination.id), method: :delete,class:"btn btn-danger" %>
     </td>
   </tr>
 <% end %>
