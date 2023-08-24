@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2023_08_21_085619) do
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
+    t.boolean "is_active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -74,6 +75,7 @@ ActiveRecord::Schema.define(version: 2023_08_21_085619) do
     t.string "image_id"
     t.integer "unit_price"
     t.boolean "is_selling_status"
+    t.boolean "is_active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
