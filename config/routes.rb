@@ -27,8 +27,7 @@ end
 
 # 管理者用
 # ↓2023/08/21記入
-namespace :admin do
-  root to: 'homes#top'
+scope module: :admin do
   resources :items, only: [:index, :new, :create, :show, :edit, :update]
   resources :genres, only: [:index, :create, :edit, :update]
   resources :customers, only: [:index, :show, :edit, :update]
