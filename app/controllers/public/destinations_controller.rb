@@ -2,7 +2,7 @@ class Public::DestinationsController < ApplicationController
   def index
     @destination = Destination.new
     @destinations = Destination.all
-    @customer = Customer.find(params[:id])
+    @customer = Customer.find(customer_params)
   end
 
   def create
