@@ -1,11 +1,8 @@
 class Public::DestinationsController < ApplicationController
   def index
     @destination = Destination.new
-    @destinations = current_customer.destinations
-  end
-
-  def edit
-    @destination = Destination.find(params[:id])
+    @destinations = Destination.all
+    @customer = Customer.find(customer_params)
   end
 
   def create
