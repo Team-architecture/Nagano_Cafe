@@ -32,7 +32,7 @@ namespace :admin do
   resources :items, only: [:index, :new, :create, :show, :edit, :update]
   resources :genres, only: [:index, :create, :edit, :update]
   resources :customers, only: [:index, :show, :edit, :update]
-  resources :orders, only: [:show, :update]
+  resources :orders, only: [:show, :update, :index]
   resources :order_details, only: [:update]
 end
 # ↑2023/08/21記入
