@@ -16,6 +16,7 @@ class Admin::GenresController < ApplicationController
       flash.now[:danger] = "エラーが発生しました"
       @genres = Genre.all
       render "index"
+    end
   end
   
   def update
@@ -25,6 +26,7 @@ class Admin::GenresController < ApplicationController
     else
       flash.now[:danger] = "エラーが発生しました"
       render "edit"
+    end
   end
   
   private
@@ -33,3 +35,4 @@ class Admin::GenresController < ApplicationController
     params.require(:genre).permit(:name)
   end
 end
+
