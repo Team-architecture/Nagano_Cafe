@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 2023_08_21_085619) do
     t.string "postal_code"
     t.string "address"
     t.string "name"
+    t.string "status"
     t.integer "how_to_pay"
     t.integer "payment_method"
     t.datetime "created_at", precision: 6, null: false
