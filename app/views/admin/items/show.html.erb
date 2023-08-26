@@ -31,7 +31,7 @@
       <tr>
         <th>税込価格<br>（税抜価格）</th>
         <td>
-          <%= @item.unit_price.to_s(:delimited) %>
+          <%= (@item.unit_price.*1.1).round.to_s(:delimited) %>
           (<%= @item.unit_price %>)円
         </td>
       </tr>
