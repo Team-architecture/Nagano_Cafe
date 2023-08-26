@@ -1,7 +1,10 @@
+<h1>Homes#top</h1>
+<p>Find me in app/views/homes/top.html.erb</p>
+
 <div class="container">
   <div class="row">
       <!--サイドバーのジャンル検索部分-->
-      <%#= render "public/shared/sidebar", genres: @genres %>
+      <%= render "public/shared/sidebar", genres: @genres %>
     <div class="col-md-9">
       <!--top背景画像-->
       <!--NaganoCake説明文-->
@@ -13,9 +16,9 @@
       </p>
 
       <h2>新着商品</h2>
-        <% @items.each do |item| %>
+        <%= @items.each do |item| %>
           <%= link_to item_path(item.id) do %>
-            <%= image_tag item.image, size: "150x150" %>
+            <%= attachment_image_tag item, :image, size: "150x150" %>
           <% end %>
           <p><%= item.name %></p>
           <p>¥<%= (item.unit_price*1.1).round %></p>
