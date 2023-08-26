@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h4 class="my-5"><%= @customer.full_name %>さんの会員情報編集</h4>
+      <h4 class="my-5"><%= @customers.full_name %>さんの会員情報編集</h4>
       <table class="table table-borderless">
-        <%= form_with model: [:admin, @customer] do |f| %>
+        <%= form_with model: [:admin, @customers] do |f| %>
         <tr>
           <td>会員ID</td>
-          <td><%= @customer.id %></td>
+          <td><%= @customers.id %></td>
         </tr>
 
         <tr>
@@ -21,7 +21,7 @@
 
         <tr>
           <td>郵便番号</td>
-          <td><%= f.text_field :postcode %></td>
+          <td><%= f.text_field :post_code %></td>
           <td></td>
         </tr>
 
