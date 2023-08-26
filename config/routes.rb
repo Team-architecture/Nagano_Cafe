@@ -27,7 +27,8 @@ end
 
 # 管理者用
 # ↓2023/08/21記入
-scope module: :admin do
+namespace :admin do
+  get '/admin', to: 'homes#top', as: 'admin'
   resources :items, only: [:index, :new, :create, :show, :edit, :update]
   resources :genres, only: [:index, :create, :edit, :update]
   resources :customers, only: [:index, :show, :edit, :update]
@@ -42,7 +43,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 }
 
 
-
+  get 'homes/about'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
