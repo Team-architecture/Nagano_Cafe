@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
-  has_many :product_orders, dependent: :destory
   belongs_to :public
+  has_many :order_details, dependent: :destroy
   
   enum how_to_pay: {
     "クレジットカード" => 0,
