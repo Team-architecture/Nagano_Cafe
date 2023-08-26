@@ -7,12 +7,17 @@
 
   <div class="row">
     <div class="col-md-8">
-      <%= form_with model: @item, url: admin_items_path, local: true do |f| %>
+      <%= form_with model: @item, url: admin_item_path(@item), method: :patch, local: true do |f| %>
+
         <table>
           <tbody>
           <tr>
             <th><%= f.label :商品画像 %></th>
-            <th><%= image_tag @item.image, width: '40%', height: '40%' %></th>
+            <th><% if @item.image.attached? %>
+                  <%= image_tag @item.image, width: '100%', height: '100%' %>
+                <% else %>
+                  <%= image_tag 'no_image', size: "200x200" %>
+                 <% end %></th>
           </tr>
           <tr>
             <th><%= f.label :商品名 %></th>
@@ -20,7 +25,7 @@
           </tr>
           <tr>
             <th><%= f.label :商品説明 %></th>
-            <td><%= text_area :explanation, class: "form_control",rows: 30, placeholder:"ここに説明文を記述します" %></td>
+            <td><%= f.text_area :explanation, class: "form_control",rows: 30, placeholder:"ここに説明文を記述します" %></td>
           </tr>
           <tr>
             <th><%= f.label :ジャンル %></th>
@@ -40,7 +45,7 @@
             </td>
           </tr>
           <tr>
-            <th><%= link_to "変更を保存", admin_item_path(@item.id), class:"btn btn-success" %></th>
+            <th><%= f.submit "変更を保存", class: "btn btn-success" %></th>
           </tr>
           </tbody>
         </table>

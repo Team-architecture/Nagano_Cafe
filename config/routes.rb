@@ -28,14 +28,7 @@ end
 # 管理者用
 # ↓2023/08/21記入
 namespace :admin do
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  get '/admin', to: 'homes#top', as: 'admin'
->>>>>>> origin/develop
-=======
-  get '/admin', to: 'homes#top', as: 'admin'
->>>>>>> a654d0f44901cff76c7535f24ef422a137c699a6
+
   resources :items, only: [:index, :new, :create, :show, :edit, :update]
   resources :genres, only: [:index, :create, :edit, :update]
   resources :customers, only: [:index, :show, :edit, :update]
