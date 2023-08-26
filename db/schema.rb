@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 2023_08_26_102246) do
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
+    t.boolean "is_active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -123,6 +124,7 @@ ActiveRecord::Schema.define(version: 2023_08_26_102246) do
     t.string "postal_code"
     t.string "address"
     t.string "name"
+    t.string "status"
     t.integer "how_to_pay"
     t.integer "payment_method"
     t.datetime "created_at", precision: 6, null: false
