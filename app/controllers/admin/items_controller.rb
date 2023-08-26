@@ -1,5 +1,5 @@
 class Admin::ItemsController < ApplicationController
-
+#aaaa
   def index
     @item = Item.new
     @items =Item.all
@@ -20,7 +20,7 @@ class Admin::ItemsController < ApplicationController
   def create
     logger.debug "Received item_params: #{item_params.inspect}"
     @item = Item.new(item_params)
-    if @item.save
+    if @item.save!
       flash.now[:success] = "商品の新規登録が完了しました。"
       redirect_to admin_item_path(@item)
     else

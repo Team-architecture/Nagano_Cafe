@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   has_many :order_datelis, dependent: :destroy
   has_many :orders, through: :order_dateils
 
-  has_one_attached :items_img
+  has_one_attached :image
 
 
   validates :name, presence: true
