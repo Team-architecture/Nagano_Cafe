@@ -1,19 +1,18 @@
-admin/items#edit
 <div class="container">
   <div class="row">
     <div class="col-md-3">
       <h2>商品編集</h2>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-md-8">
-      <%= form_with model: @item, url admin_items_path, local: true do |f| %>
+      <%= form_with model: @item, url: admin_items_path, local: true do |f| %>
         <table>
           <tbody>
           <tr>
             <th><%= f.label :商品画像 %></th>
-            <th><%= f.attachment_field :image %></th>
+            <th><%= image_tag @item.image, width: '40%', height: '40%' %></th>
           </tr>
           <tr>
             <th><%= f.label :商品名 %></th>
@@ -41,10 +40,11 @@ admin/items#edit
             </td>
           </tr>
           <tr>
-            <th><%= f.submit "変更を保存", class: "btn-btn-success" %></th>
+            <th><%= link_to "変更を保存", admin_item_path(@item.id), class:"btn btn-success" %></th>
           </tr>
           </tbody>
         </table>
+        <% end %>
     </div>
   </div>
 </div>
