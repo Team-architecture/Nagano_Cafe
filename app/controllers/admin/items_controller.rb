@@ -20,7 +20,7 @@ class Admin::ItemsController < ApplicationController
   def create
     logger.debug "Received item_params: #{item_params.inspect}"
     @item = Item.new(item_params)
-    if @item.save
+    if @item.save!
       flash.now[:success] = "商品の新規登録が完了しました。"
       redirect_to admin_item_path(@item)
     else
@@ -44,5 +44,5 @@ end
 private
 
   def item_params
-    params.require(:item).permit(:genre_id, :name, :explanation, :image_id, :unit_price, :is_selling_status, :is_active)
+    params.require(:item).permit(:genre_id, :name, :explanation, :image, :unit_price, :is_selling_status, :is_active)
   end
