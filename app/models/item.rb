@@ -6,9 +6,6 @@ class Item < ApplicationRecord
 
   has_one_attached :items_img
 
-  def unit_price
-    (self.price * 1.1).round
-  end
 
   validates :name, presence: true
   validates :explanation, presence: true

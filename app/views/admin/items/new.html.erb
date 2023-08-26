@@ -1,19 +1,18 @@
-admin/items#new
-
 <div class="container">
   <div class="row">
     <div class="col-md-3">
       <h2>商品新規登録</h2>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-md-8">
-      <%= form_with model: @item, url admin_items_path, local: true do |f| %>
+      <%= form_with model: @item, url: admin_items_path do |f| %>
+
         <table>
           <tr>
             <th><%= f.label :商品画像 %></th>
-            <th><%= f.attachment_field :image %></th>
+            <th><%= f.file_field :image %></th>
           </tr>
           <tr>
             <th><%= f.label :商品名 %></th>
@@ -41,9 +40,10 @@ admin/items#new
             </td>
           </tr>
           <tr>
-            <th><%= f.submit "新規登録", class: "btn-btn-success" %></th>
+            <th><%= f.submit "新規登録", class: "btn btn-success" %></th>
           </tr>
         </table>
+        <% end %>
     </div>
   </div>
 </div>
