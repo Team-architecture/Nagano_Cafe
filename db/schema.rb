@@ -91,7 +91,6 @@ ActiveRecord::Schema.define(version: 2023_08_26_102246) do
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
-    t.boolean "is_active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -100,10 +99,8 @@ ActiveRecord::Schema.define(version: 2023_08_26_102246) do
     t.integer "genre_id"
     t.string "name"
     t.text "explanation"
-    t.string "image_id"
     t.integer "unit_price"
-    t.boolean "is_selling_status"
-    t.boolean "is_active", default: true
+    t.integer "is_selling_status", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -124,7 +121,6 @@ ActiveRecord::Schema.define(version: 2023_08_26_102246) do
     t.string "postal_code"
     t.string "address"
     t.string "name"
-    t.string "status"
     t.integer "how_to_pay"
     t.integer "payment_method"
     t.datetime "created_at", precision: 6, null: false

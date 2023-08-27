@@ -1,4 +1,7 @@
 class Public::ItemsController < ApplicationController
+  
+ 
+  
   def top
     @genres = Genre.where(is_active: true)
     @items = Items.all

@@ -33,9 +33,9 @@
           <tr>
             <th><%= f.label :販売ステータス %></th>
             <td>
-              <%= f.radio_button :is_selling_status, true, checked: true %>
+              <%= f.radio_button :is_selling_status, :selling, checked: true %>
               <%= f.label :is_selling_status, "販売中" %>
-              <%= f.radio_button :is_selling_status, false %>
+              <%= f.radio_button :is_selling_status, :not_selling %>
               <%= f.label :is_selling_status, "販売停止中" %>
             </td>
           </tr>
