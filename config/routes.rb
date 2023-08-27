@@ -28,7 +28,7 @@ end
 # 管理者用
 # ↓2023/08/21記入
 namespace :admin do
-  get '/admin', to: 'homes#top', as: 'admin'
+
   resources :items, only: [:index, :new, :create, :show, :edit, :update]
   resources :genres, only: [:index, :create, :edit, :update]
   resources :customers, only: [:index, :show, :edit, :update]
