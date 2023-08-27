@@ -14,17 +14,6 @@
       <strong> 全<%= @items.count %>件 </strong>
       <div class="items-list">
         <% @items.each do |item| %>
-<<<<<<< HEAD
-          <% if item.genre.is_active == true %>
-            <div class="items-list-item">
-              <%= link_to items_path(item) do %>
-                <%= image_tag item.get_items_image(100,100) %><br>
-              <% end %>
-              <%= item.name %><br>
-              ¥<%= (item.unit_price*1.1).round.to_s(:delimited)%>
-            </div>
-          <% end %>
-=======
         <% if item.genre.is_active == true %>
       <div class="items-list-item">
         <%= link_to item_path(item) do %>
@@ -34,7 +23,6 @@
         ¥<%= (item.unit_price * 1.1).round.to_s(:delimited) %>
      </div>
         <% end %>
->>>>>>> origin/develop
         <% end %>
       </div>
       <%= paginate @items %>
