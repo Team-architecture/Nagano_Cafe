@@ -2,9 +2,7 @@
 <h1>ショッピングカート</h1>
 	<div class="row">
 		<div class="col-md-5">
-		    <%= link_to cart_item_path(@cart_items), method: :delete do %>
-		      <button class="btn btn-danger ">カートを空にする</button>
-		    <% end %>
+		    <%= link_to "カートを空にする", cart_items_destroy_all_path, class: "btn btn-danger ", method: :delete %>
 		</div>
 		<br>
 
@@ -28,7 +26,7 @@
         <% end %></td>
     <td><%= (cart_item.item.unit_price * cart_item.quantity * 1.1).round.to_s(:delimited) %> 円</td>
     <td>
-      <%= link_to "削除する", "#", class: "btn-sm btn-danger" %>
+      <%= link_to "削除する", cart_item_path(cart_item.id), class: "btn-sm btn-danger", method: :delete %>
     </td>
   </tr>
 <% end %>
