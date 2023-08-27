@@ -2,7 +2,6 @@ class Public::DestinationsController < ApplicationController
   def index
     @destination = Destination.new
     @destinations = Destination.all
-    @customer = Customer.find(customer_params)
   end
 
   def create
@@ -15,6 +14,10 @@ class Public::DestinationsController < ApplicationController
     @destinations = current_customer.destinations
     render "index"
     end
+  end
+
+  def edit
+    @destination = Destination.find(params[:id])
   end
 
   def update
