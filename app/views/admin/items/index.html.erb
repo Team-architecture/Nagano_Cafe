@@ -32,7 +32,19 @@
             <td><%= link_to item.name, admin_item_path(item.id) %></td>
             <td><%= item.unit_price %></td>
             <td><%= item.genre.name %></td>
-            <td><%= item.is_selling_status %></td>
+             <td>
+              <% case @item.is_selling_status %>
+              <% when "not_selling" %>
+                <%= Item.is_selling_statuses_i18n[:not_selling] %>
+              <% when "selling" %>
+                <%= Item.is_selling_statuses_i18n[:selling] %>
+              <% when "sold_out" %>
+                <%= Item.is_selling_statuses_i18n[:sold_out] %>
+              <% else %>
+                <%= t('ja.errors.messages.invalid') %>
+              <% end %>
+
+        </td>
           </tr>
           <% end %>
         </tbody>
