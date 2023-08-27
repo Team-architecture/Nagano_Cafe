@@ -11,4 +11,12 @@ class Item < ApplicationRecord
   validates :explanation, presence: true
   validates :genre, presence: true
   validates :unit_price, presence: true, numericality: {only_integer: true, greater_than: 0}
+
+  def get_items_image(width, height)
+  unless items_img.attached?
+    file_path = Rails.root.join('app/assets/images/no_image.jpg')
+    items_img.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
+  end
+  items_img.variant(resize_to_limit: [width, height]).processed
+  end
 end
