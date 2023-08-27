@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2023_08_26_102246) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer "customer_id"
-    t.integer "product_id"
+    t.integer "item_id"
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -100,7 +100,6 @@ ActiveRecord::Schema.define(version: 2023_08_26_102246) do
     t.integer "genre_id"
     t.string "name"
     t.text "explanation"
-    t.string "image_id"
     t.integer "unit_price"
     t.boolean "is_selling_status"
     t.boolean "is_active", default: true
@@ -110,7 +109,7 @@ ActiveRecord::Schema.define(version: 2023_08_26_102246) do
 
   create_table "order_details", force: :cascade do |t|
     t.integer "order_id"
-    t.integer "product_id"
+    t.integer "item_id"
     t.integer "quantity"
     t.integer "production_status"
     t.integer "price"
@@ -124,7 +123,6 @@ ActiveRecord::Schema.define(version: 2023_08_26_102246) do
     t.string "postal_code"
     t.string "address"
     t.string "name"
-    t.string "status"
     t.integer "how_to_pay"
     t.integer "payment_method"
     t.datetime "created_at", precision: 6, null: false
