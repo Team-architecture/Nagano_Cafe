@@ -33,7 +33,7 @@ class Public::CartItemsController < ApplicationController
     if params[:cart_item][:quantity] == "0"
       @cart_item.destroy
       redirect_to cart_items_path
-    elsif @cart_item.update(quantity: params[:cart_item][:quantity])
+    elsif @cart_items.update(quantity: params[:cart_item][:quantity])
       redirect_to cart_items_path
     else
       @cart_item = current_customer.cart_items
