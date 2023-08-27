@@ -1,6 +1,3 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
-
 <div class="container">
   <div class="row">
       <!--サイドバーのジャンル検索部分-->
@@ -16,9 +13,9 @@
       </p>
 
       <h2>新着商品</h2>
-        <%= @items.each do |item| %>
-          <%= link_to item_path(item.id) do %>
-            <%= attachment_image_tag item, :image, size: "150x150" %>
+        <% @items.each do |item| %>
+          <%= link_to item_path(item) do %>
+            <%= image_tag item.get_items_image(100,100) %>
           <% end %>
           <p><%= item.name %></p>
           <p>¥<%= (item.unit_price*1.1).round %></p>
