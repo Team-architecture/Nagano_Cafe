@@ -6,6 +6,7 @@ class CreateItems < ActiveRecord::Migration[6.1]
       t.text :explanation
       t.integer :unit_price
       t.integer :is_selling_status, default: 0
+    
       
 
 
