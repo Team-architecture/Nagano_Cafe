@@ -19,8 +19,8 @@
               <%= link_to items_path(item) do %>
                 <%= image_tag item.get_items_image(100,100) %><br>
               <% end %>
-              <%= @items.name %><br>
-              ¥<%= (items.price*1.1).floor.to_s(:delimited)%>
+              <%= item.name %><br>
+              ¥<%= (item.unit_price*1.1).round.to_s(:delimited)%>
             </div>
           <% end %>
         <% end %>
