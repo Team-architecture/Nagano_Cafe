@@ -17,7 +17,7 @@
           </tr>
           <tr>
             <th><%= f.label :商品画像を変更 %></th>
-            <td><%= f.file_field :items_img, accept: "image/*" %></td>
+            <td><%= f.file_field image_tag @item.get_items_image(100,100) %></td>
           </tr>
           <tr>
             <th><%= f.label :商品名 %></th>
@@ -43,8 +43,6 @@
     <%= f.label :is_selling_status, "販売中" %>
     <%= f.radio_button :is_selling_status, "no_selling", checked: @item.is_selling_status == 0 %>
     <%= f.label :is_selling_status, "販売停止中" %>
-    <%#= f.radio_button :is_selling_status, "sold_out", checked: @item.is_selling_status == 2 %>
-    <%#= f.label :is_selling_status, "売り切れ" %>
   </td>
 </tr>
 
