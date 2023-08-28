@@ -33,16 +33,7 @@
       <tr>
         <th> 販売ステータス </th>
         <td>
-          <% case @item.is_selling_status %>
-          <% when "not_selling" %>
-            <%= Item.is_selling_statuses_i18n[:not_selling] %>
-          <% when "selling" %>
-            <%= Item.is_selling_statuses_i18n[:selling] %>
-          <% when "sold_out" %>
-            <%= Item.is_selling_statuses_i18n[:sold_out] %>
-          <% else %>
-            <%= t('ja.errors.messages.invalid') %>
-          <% end %>
+            <%= @item.is_selling_status_i18n %>
 
         </td>
       </tr>

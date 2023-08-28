@@ -14,7 +14,7 @@
       <strong> 全<%= @items.count %>件 </strong>
       <div class="items-list">
         <% @items.each do |item| %>
-          <% if item.is_selling_status == 1 %>
+          <%# if item.is_selling_status == 1 %>
             <div class="items-list-item">
               <%= link_to item_path(item) do %>
                 <%= image_tag item.get_items_image(100, 100) %><br>
@@ -22,7 +22,7 @@
               <%= item.name %><br>
               ¥<%= (item.unit_price * 1.1).round.to_s(:delimited) %>
             </div>
-          <% end %>
+          <%# end %>
         <% end %>
       </div>
       <%= paginate @items %>
