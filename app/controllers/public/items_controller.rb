@@ -1,29 +1,22 @@
 class Public::ItemsController < ApplicationController
-  
- 
-  
+
+  include Kaminari::Helpers::HelperMethods
+
   def top
-    @genres = Genre.where(is_active: true)
-    @items = Items.all
-    @random = Product.order("RANDOM()").limit(4)
+    @genres = Genre.all
+    @items = Item.all
   end
 
-  def about
-  end
+
 
   def index
-    @genres = Genre.where(is_active: true)
-    if params[:genre_id]
-      @genre = Genre.find(params[:genre_id])
-      @items = @genre.items.where(is_active: true).page(params[:page]).reverse_order
-    else
-      @items = Item.where(is_active: true).page(params[:page]).reverse_order
-    end
+    @genres = Genre.all
+    @items = Item.page(params[:page])
   end
 
   def show
     @item = Item.find(params[:id])
-    @genres = Genre.where(is_active: true)
+    @genres = Genre.all
     @cart_item = CartItem.new
   end
 
