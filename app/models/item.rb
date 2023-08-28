@@ -4,7 +4,7 @@ class Item < ApplicationRecord
 
   belongs_to :genre
   has_many :cart_items, dependent: :destroy
-  has_many :order_datelis, dependent: :destroy
+  has_many :order_details, dependent: :destroy
   has_many :orders, through: :order_datails
 
   has_one_attached :items_img
