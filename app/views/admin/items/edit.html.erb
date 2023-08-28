@@ -41,10 +41,10 @@
   <td>
     <%= f.radio_button :is_selling_status, "selling", checked: @item.is_selling_status == 1 %>
     <%= f.label :is_selling_status, "販売中" %>
-    <%= f.radio_button :is_selling_status, "販売停止", checked: @item.is_selling_status == 0 %>
+    <%= f.radio_button :is_selling_status, "no_selling", checked: @item.is_selling_status == 0 %>
     <%= f.label :is_selling_status, "販売停止中" %>
-    <%= f.radio_button :is_selling_status, "売り切れ", checked: @item.is_selling_status == 2 %>
-    <%= f.label :is_selling_status, "売り切れ" %>
+    <%#= f.radio_button :is_selling_status, "sold_out", checked: @item.is_selling_status == 2 %>
+    <%#= f.label :is_selling_status, "売り切れ" %>
   </td>
 </tr>
 
