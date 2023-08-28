@@ -51,17 +51,21 @@
   </div>
   
   <div class="row">
-    <div class="col-8">
-        <h6>支払方法</h6>
+    <div class="col-2">
+      <h5><strong>支払方法</strong></h5>
+    </div>
+    <div class="col-md-7">
         <%= @order.how_to_pay_i18n %>
         <!--enumに_i18nを後ろにつけると日本語になる-->
     </div>
   </div>
   
   <div class="row">
-    <div class=col-8>
-        <h6>お届け先</h6>  
-        〒<%= @order.postal_code %><%= @order.address %></br><%= @order.name %>
+    <div class=col-2>
+        <h5 style="color: black"><strong>お届け先</strong></h5>  
+    </div>
+    <div class="col-md-7">
+      〒<%= @order.postal_code %><%= @order.address %></br><%= @order.name %>
     </div>
   </div>
   
