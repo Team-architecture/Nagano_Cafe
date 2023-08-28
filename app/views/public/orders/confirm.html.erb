@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <h2>注文情報確認</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-8">
+      <table class="table table-bordered">
+        <thead style="background-color:#F5F5F5;">
+          <tr>
+            <th>商品名</th>
+            <th>単価（税込）</th>
+            <th>数量</th>
+            <th>小計</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @cart_items.each do |cart_item| %>
+          <tr>
+            <td><%= image_tag cart_item.item.items_img %><%= cart_item.item.name %></td>
+            <td><%= (cart_item.item.unit_price*1.1).round %></td>
+            <td><%= cart_item.quantity %></td>
+            <td><%= (cart_item.item.unit_price*1.1*cart_item.quantity).round  %></td>
+            <% @num +=  (cart_item.item.unit_price*1.1*cart_item.quantity) %>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-3">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th style="background-color:#F5F5F5;">送料</th>
+            <td><%= @order.shipping_fee %></td>
+          </tr>
+          <tr>
+            <th style="background-color:#F5F5F5;">商品合計</th>
+            <td><%= @num.round %></td>
+          </tr>
+          <tr>
+            <th style="background-color:#F5F5F5;">請求金額</th>
+            <td><%= @order.shipping_fee + @num.round %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-8">
+        <h6>支払方法</h6>
+        <%= @order.how_to_pay_i18n %>
+        <!--enumに_i18nを後ろにつけると日本語になる-->
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class=col-8>
+        <h6>お届け先</h6>  
+        〒<%= @order.postal_code %><%= @order.address %></br><%= @order.name %>
+    </div>
+  </div>
+  
+  <%= link_to "注文を確定する", orders_complete_path, class: "btn-btn-success" %>
+</div>
