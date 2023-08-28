@@ -3,6 +3,8 @@
     <div class="col-md-10">
       <h2>注文情報入力</h2>
       <p><%= notice %></p>
+    </div>
+  </div>
       
       <%= form_with model: @order, local: true, url(orders_confirm_path), method: :post do |f| %>
       <div class="field row" style="margin-left:20px; ">
@@ -11,14 +13,14 @@
             <h4><strong>支払方法</strong></h4>
             <tr>
               <td>
-                <%= f.radio_button :how_to_pay, 0, checked: "0" %>
-                <%= f.label :how_to_pay, "クレジットカード" %>
+                <%= f.radio_button :how_to_pay, Order.how_to_pays.key(0), checked: true %>
+                <%= f.label :how_to_pay, Order.how_to_pays_i18n[:credit_card] %>
               </td>
             </tr>
             <tr>
               <td>
-                <%= f.radio_button :how_to_pay, 1, checked: "1" %>
-                <%= f.label :how_to_pay, "銀行振込" %>
+                <%= f.radio_button :how_to_pay, Order.how_to_pays.key(1) %>
+                <%= f.label :how_to_pay, Order.how_to_pays_i18n[:transfer] %>
               </td>
               
             </tr>
@@ -26,44 +28,51 @@
             <h4><strong>お届け先</strong></h4>
             <tr>
               <td>
-                <%= radio_button :「current_costmerの配送先urlを入れる」, 0, checked: "0" %>
+                <%= radio_button_tag :choice, 0, checked: true %>
                 <%= f.label :"ご自身の住所" %>
               </td>
               <td>
-                <%= current_costmer.postal_code %>,<%= current_costmer.address %></rb>
-                <%= current_costmer.last_name%><%=current_costmer.first_name%>
+                <%= current_customer.post_code %>,<%= current_customer.address %></rb>
+                <%= current_customer.last_name%><%=current_customer.first_name%>
               </td>
+            </tr>
               
+            <tr> 
               <td>
-                <%= radio_button :url , 1, checked: "1" %>
+                <%= radio_button_tag :choice, 1 %>
                 <%= f.label :"登録済住所から選択" %>
               </td>
               <td>
-                <%= f.collection_select(:address, current_costmer.address.all, :id, :address.all) %>
+                <%#= f.collection_select(:destination_id, current_customer.destinations, :id, :address) %>
+                <%= select_tag :destinations_id, options_from_collection_for_select(Destination.all, :id, :name) %>
+                <%#= f.collection_select(:destination_id, Destination.all, :id, :name) %>
               </td>
-              
+            </tr> 
+                  
+            <tr>
               <td>
-                <%= radio_button :url, 2, checked: "2" %>
+                <%= radio_button_tag :choice, 2 %>
                 <%= f.label :"新しいお届け先" %>
               </td>
+              
+              
               <td>
                 <%= f.label :"郵便番号（ハイフンなし）"%>
-                <%= f.text_field :postal_code %>
+                <%= f.text_field :postal_code, autofocus: true %>
               </td>
               <td>
                 <%= f.label :"住所" %>
-                <%= f.text_field :address, size: "60px" %>
+                <%= f.text_field :address, autofocus: true, size:"60*60" %>
               </td>
               <td>
                 <%= f.label :"宛名" %>
-                <%= f.rext_field :name %>
+                <%= f.text_field :name, autofocus: true, size:"30*30" %>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
+    </div>
       <%= f.submit "確認画面へ進む", class: "btn-btn-primary text_center" %>
       <% end %>
-    </div>
-  </div>
 </div>
