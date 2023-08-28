@@ -1,0 +1,125 @@
+header, footer {
+  background-color: #e74c3c; /* Red background color */
+  color: #fff; /* White text */
+}
+
+/* Navigation Links */
+nav a {
+  color: #fff; /* White link color */
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #d35400; /* Slightly darker on hover */
+  }
+}
+
+/* Body Background */
+body {
+  background-color: #f5f5f5; /* Light gray background */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Content Area */
+.container, .product {
+  background-color: #fff; /* White content background */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+.btn {
+  background-color: #e74c3c; /* Red button background */
+  color: #fff; /* White button text */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #c0392b; /* Darker red on hover */
+  }
+}
+
+/* Text Colors */
+body {
+  color: #555; /* Dark gray text color */
+}
+
+/* Lighter Text Color */
+.light-text {
+  color: #888; /* Light gray text color */
+}
+
+/* Restaurant-specific Styling */
+.restaurant-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.restaurant-tagline {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+
+  .item-name {
+    font-weight: bold;
+  }
+
+  .item-price {
+    color: #e74c3c;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  /* Add any specific styling adjustments for smaller screens here */
+}
+
+
+/* Custom CSS for changing font style */
+/* Custom CSS for changing link font */
+.navbar-nav a,
+.footer a {
+   font-family: 'Quicksand', sans-serif; /* Use the Quicksand font */
+  font-size: 16px; /* Adjust the font size as needed */
+  /* Add any other styling adjustments here */
+}
+/* Apply the same font style to other elements */
+.footer {
+  /* Apply font style to footer text */
+  p,
+  span,
+  /* Add other selectors for footer text elements */
+  {
+    font-family: 'Quicksand', sans-serif; /* Use the Quicksand font */
+    /* Add any other styling adjustments here */
+  }
+}
+
+.plus-button {
+  display: inline-block;
+  padding: 10px;
+  font-size: 24px;
+  color: #ffffff; /* Set the desired color */
+  background-color: #007bff; /* Set the desired background color */
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+
+  &:hover {
+    background-color: #0056b3; /* Change color on hover */
+    transform: scale(1.1); /* Add a slight scale effect on hover */
+  }
+}
+
