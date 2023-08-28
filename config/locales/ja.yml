@@ -2,7 +2,7 @@ ja:
   enums:
     item:
       is_selling_status:
-        no_selling: "販売停止"
+        no_selling: "販売停止中"
         selling: "販売中"
         sold_out: "売り切れ"
 

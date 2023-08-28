@@ -5,8 +5,6 @@
     </div>
   </div>
 
-
-<div class="container">
   <div class="row">
     <div class="col-md-3">
       <h2>商品一覧</h2>
@@ -18,34 +16,28 @@
       <table class="table">
         <thead>
           <tr>
-            <td>商品ID</td>
-            <td>商品名</td>
-            <td>税抜き価格</td>
-            <td>ジャンル</td>
-            <td>ステータス</td>
+            <th>商品ID</th>
+            <th>商品名</th>
+            <th>税抜き価格</th>
+            <th>ジャンル</th>
+            <th>ステータス</th>
           </tr>
         </thead>
         <tbody>
           <% @items.each do |item| %>
-          <tr>
-            <td><%= item.id%></td>
-            <td><%= link_to item.name, admin_item_path(item.id) %></td>
-            <td><%= item.unit_price %></td>
-            <td><%= item.genre.name %></td>
-             <td>
-              <% case @item.is_selling_status %>
-              <% when "not_selling" %>
-                <%= Item.is_selling_statuses_i18n[:not_selling] %>
-              <% when "selling" %>
-                <%= Item.is_selling_statuses_i18n[:selling] %>
-              <% when "sold_out" %>
-                <%= Item.is_selling_statuses_i18n[:sold_out] %>
-              <% else %>
-                <%= t('ja.errors.messages.invalid') %>
-              <% end %>
-
-        </td>
-          </tr>
+            <tr>
+              <td><%= item.id %></td>
+              <td><%= link_to item.name, admin_item_path(item.id) %></td>
+              <td><%= item.unit_price %></td>
+              <td><%= item.genre.name %></td>
+              <td>
+                <% if item.no_selling? %>
+                  <%= Item.is_selling_statuses_i18n[:no_selling] %>
+                <% elsif item.selling? %>
+                  <%= Item.is_selling_statuses_i18n[:selling] %>
+                <% end %>
+              </td>
+            </tr>
           <% end %>
         </tbody>
       </table>

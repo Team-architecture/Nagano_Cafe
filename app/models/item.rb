@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
 
-  enum is_selling_status: { no_selling: 0, selling: 1, sold_out: 2 }
+  enum is_selling_status: { no_selling: 0, selling: 1}
 
   belongs_to :genre
   has_many :cart_items, dependent: :destroy
