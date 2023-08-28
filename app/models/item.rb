@@ -1,4 +1,7 @@
 class Item < ApplicationRecord
+
+  enum is_selling_status: { no_selling: 0, selling: 1}
+
   belongs_to :genre
   has_many :cart_items, dependent: :destroy
   has_many :order_datelis, dependent: :destroy
@@ -8,6 +11,7 @@ class Item < ApplicationRecord
 
 
   validates :name, presence: true
+  validates :is_selling_status, presence: true
   validates :explanation, presence: true
   validates :genre, presence: true
   validates :unit_price, presence: true, numericality: {only_integer: true, greater_than: 0}

@@ -10,8 +10,8 @@ scope module: :public do
   get "/customers/information/edit" => "customers#edit"
   patch "customers/information" => "customers#update"
   patch "/customers/withdraw" => "customers#withdraw"
-  resources :cart_items, only: [:index, :create, :update, :destroy]
   delete "/cart_items/destroy_all" => "cart_items#destroy_all"
+  resources :cart_items, only: [:index, :create, :update, :destroy]
   resources :orders, only: [:index, :show, :create, :new]
   post "orders/confirm" => "orders#confirm"
   get "orders/complete" => "orders#complete"

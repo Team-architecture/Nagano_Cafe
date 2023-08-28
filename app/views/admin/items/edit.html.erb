@@ -36,15 +36,18 @@
             <th><%= f.label :税抜価格 %></th>
             <td><%= f.text_field :unit_price, placeholder:"1000" %>円</td>
           </tr>
-          <tr>
-            <th><%= f.label :販売ステータス %></th>
-            <td>
-              <%= f.radio_button :is_selling_status, true, checked: true %>
-              <%= f.label :is_selling_status, "販売中" %>
-              <%= f.radio_button :is_selling_status, false %>
-              <%= f.label :is_selling_status, "販売停止中" %>
-            </td>
-          </tr>
+   　　   <tr>
+  <th><%= f.label :販売ステータス %></th>
+  <td>
+    <%= f.radio_button :is_selling_status, "selling", checked: @item.is_selling_status == 1 %>
+    <%= f.label :is_selling_status, "販売中" %>
+    <%= f.radio_button :is_selling_status, "no_selling", checked: @item.is_selling_status == 0 %>
+    <%= f.label :is_selling_status, "販売停止中" %>
+  </td>
+</tr>
+
+
+
           <tr>
             <th><%= f.submit "変更を保存", class: "btn btn-success" %></th>
           </tr>
