@@ -4,7 +4,7 @@
       <h2>注文情報入力</h2>
       <p><%= notice %></p>
       
-      <%= form_with model: @order, local: true, url orders_confirm_path, method: :post do |f| %>
+      <%= form_with model: @order, local: true, url(orders_confirm_path), method: :post do |f| %>
       <div class="field row" style="margin-left:20px; ">
         <table>
           <tbody>
@@ -20,7 +20,7 @@
                 <%= f.radio_button :how_to_pay, 1, checked: "1" %>
                 <%= f.label :how_to_pay, "銀行振込" %>
               </td>
-              <td><%= %></td>
+              
             </tr>
             
             <h4><strong>お届け先</strong></h4>
