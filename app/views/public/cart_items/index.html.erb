@@ -2,11 +2,11 @@
 	<div class="row">
     <div class="col">
       <h1>ショッピングカート</h1>
-	<div class="row">
-		<div class="col-md-5">
-		    <%= link_to "カートを空にする", cart_items_destroy_all_path, class: "btn btn-danger ", method: :delete %>
-		</div>
-		<br>
+	     <div class="row">
+		    <div class="col-xs-4 mx-5">
+		    <%= link_to "カートを空にする", cart_items_destroy_all_path, class: "btn btn-lg btn-danger ", method: :delete %>
+		    </div>
+		    <br>
 
 <table class="table table-bordered">
   <thead>
@@ -37,7 +37,7 @@
 	<div class="row">
 		<div class="col-xs-4 mx-5">
 	    <%= link_to root_path do %>
-	      <button class="btn btn-primary">買い物を続ける</button>
+	      <button class="btn btn-lg btn-primary">買い物を続ける</button>
 	    <% end %>
 	  </div>
 		<div class="row">
