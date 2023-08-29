@@ -29,25 +29,34 @@
       color: #fff;
     }
 
-    nav {
-      background-color: rgba(0, 0, 0, 0.3);
-      padding: 10px 0;
-      display: flex;
-      align-items: center;
-    }
+  nav {
+  /* ... other styles ... */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    nav ul.navbar-nav {
-      list-style: none;
-      display: flex;
-      padding: 0;
-      margin: 0;
-    }
+/* Style for the navigation items */
+nav ul.navbar-nav {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
 
-    nav ul.navbar-nav li {
-      margin: 0 15px;
-      display: inline;
-    }
+nav ul.navbar-nav li {
+  margin: 0 15px;
+  display: inline-flex;
+  align-items: center;
+}
 
+/* Style for the links within the navigation items */
+nav ul.navbar-nav li a {
+  display: inline-block; /* Display links horizontally */
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px; /* Add padding for better spacing */
+}
     nav a {
       color: #fff;
       text-decoration: none;
@@ -77,7 +86,7 @@
   <header style="background-image: url('<%= asset_path('header.jpg') %>');" class="py-3">
     <nav>
       <a href="<%= root_path %>">
-        <img src="<%= asset_path('logo.jpg') %>" alt="Logo" class="logo">
+        <img src="<%= asset_path('logo2.jpg') %>" alt="Logo" class="logo">
       </a>
 
       <ul class="navbar-nav">
