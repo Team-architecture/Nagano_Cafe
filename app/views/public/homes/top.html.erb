@@ -1,31 +1,55 @@
+<div class="container-fluid" style="background-image: url('<%= asset_path('大理石.jpg') %>');
+background-size: cover; background-position: center center;height: 100vh;">
 <div class="container">
   <div class="row">
-      <!--サイドバーのジャンル検索部分-->
-      <%#= render "public/shared/sidebar", genres: @genres %>
-    <div class="col-md-9">
-      <!--top背景画像-->
-      <!--NaganoCake説明文-->
-      <p class="font_text">
-        ようこそ、ながのCAKEへ！<br>
-        このサイトは、ケーキ販売のECサイトになります。<br>
-        会員でない方も商品の閲覧はできますが、<br>
+    <div class="col-md-col-xl-8 outline text-xl-left text-center">
+      <div class="display-3 copy">
+        <span class="d-inline-block">ようこそ</span><br>
+        <span class="d-inline-block">ながの</span><span class="d-inline-block">CAKEへ！</span>
+      </div>
+      <p class="lead mt-2">このサイトは、ケーキ販売のECサイトになります</p>
+      <hr>
+      <ul class="download list-inline">
+      </ul>
+      <div class="basedon small">
+        会員でない方も商品の閲覧はできますが<br>
         購入には会員登録が必要になります。
-      </p>
+        </div>
+       </div>
+      </div>
+     </div>
 
-      <h2>新着商品</h2>
-        <% @items.each do |item| %>
-          <%= link_to item_path(item) do %>
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <h2>新着商品</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+            <% @items.each do |item| %>
+          <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+            <%= link_to item_path(item) do %>
             <%= image_tag item.get_items_image(100,100) %>
+             <div class="card-body">
+              <h5 class="card-title"><%= item.name %></h5>
+              <p class"card-text">¥<%= (item.unit_price*1.1).round %></p>
+             </div>
           <% end %>
-          <p><%= item.name %></p>
-          <p>¥<%= (item.unit_price*1.1).round %></p>
+          </div>
+        </div>
         <% end %>
+        </div>
+      </div>
+    
+  <div class="container" style="padding-bottom: 70px;">
+    <div class="row">
+      <div class="ml-auto">
+        <%= link_to "全ての商品を見る", items_path, class: "btn btn-primary" %>
+      </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-md-10"></div>
-    <div class="col-md-2">
-      <%= link_to "全ての商品を見る", items_path %>
-    </div>
-  </div>
+</div
