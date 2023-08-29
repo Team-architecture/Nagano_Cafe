@@ -1,3 +1,5 @@
+<div class="container-fluid" style="background-image: url('<%= asset_path('大理石.jpg') %>');
+background-size: cover; background-position: center center;height: 100vh;">
 <h1>配送先登録/一覧</h1>
 <%= render 'public/destinations/error', destination: @destination %>
 <%= form_with model: @destination do |form| %>
@@ -39,4 +41,5 @@
   </tr>
 <% end %>
 </table>
+</div>
 
