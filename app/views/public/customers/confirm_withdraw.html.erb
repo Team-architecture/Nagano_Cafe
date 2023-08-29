@@ -1,3 +1,5 @@
+<div class="container-fluid" style="background-image: url('<%= asset_path('大理石.jpg') %>');
+background-size: cover; background-position: center center;height: 100vh;">
 <div class="container">
   <div class="row">
     <div class="col-md-5">
@@ -12,4 +14,5 @@
   <%= link_to "退会する", customers_withdraw_path, method: :patch, :class => "btn btn-danger ms-3", data: { confirm: "本当に退会しますか？" } %>
     </div>
   </div>
+</div>
 </div>
