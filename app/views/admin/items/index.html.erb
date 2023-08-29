@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row justify-content-end mb-3">
     <div class="col-auto">
-      <%= link_to raw('<i class="fas fa-plus"></i>'), new_admin_item_path, class: 'plus-button' %>
+      <%= link_to new_admin_item_path, class: 'plus-button' do %>
+      <i class="fas fa-plus"></i>
+      <% end %>
     </div>
   </div>
 
